@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Comic;
+
 class ComicController extends Controller
 {
     /**
@@ -13,9 +15,9 @@ class ComicController extends Controller
      */
     public function index()
     {
-        //
+    //    $Comics = comic::all();
+    //    dd($Comics);
     }
-
     /**
      * Show the form for creating a new resource.
      *

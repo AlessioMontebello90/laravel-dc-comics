@@ -17,4 +17,5 @@ use App\Http\Controllers\ComicController;
 */
 
 Route::get('/', [PageController::class, 'index'])->name('home');
-Route::get('/comic', [ComicControllerController::class, 'index'])->name('comic.index');
+
+Route::resource('Comics', ComicController::class);
