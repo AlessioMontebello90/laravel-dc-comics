@@ -7,14 +7,10 @@ use App\Models\Comic;
 
 class ComicController extends Controller
 {
-    //
-}
-
-class ComicController extends Controller
-{
+    
   public function index()
   {
-    $comicsj = Comic::all();
-    return view('comic.index', compact('houses'));
+    $comics = Comic::all();
+    return view('comic.index', compact('comics'));
   }
 }
