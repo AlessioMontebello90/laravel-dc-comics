@@ -34,5 +34,6 @@
                 @endforeach
             </tbody>
         </table>
+        <a href="{{ route('comics.create') }}" class="btn btn-warning"> create new comic</a>
     </section>
 @endsection

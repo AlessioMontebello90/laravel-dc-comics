@@ -19,10 +19,19 @@
                     </a>
 
                 </li>
+
+
+                {{-- nav section for create root --}}
+
+                <li class="nav-item">
+                    <a class="nav-link {{ Route::currentRouteName() == 'comics.create' ? 'active' : '' }}"
+                        href="{{ route('comics.create') }}" aria-current="page">Add new comics<span
+                            class="visually-hidden">(current)</span></a>
+                </li>
             </ul>
-            <form class="d-flex my-2 my-lg-0">
-                <input class="form-control me-sm-2" type="text" placeholder="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <form class="d-flex my-5 my-lg-3">
+                <input class="form-control me-sm-2" type="text" placeholder="Search...">
+                <button class="btn btn-outline-secondary my-5 my-sm-1" type="submit">Search</button>
             </form>
         </div>
     </div>
