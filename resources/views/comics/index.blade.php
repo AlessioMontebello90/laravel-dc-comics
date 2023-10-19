@@ -34,15 +34,27 @@
                                     class="px-3 py-2 mt-3 rounded-circle">
                                     Info
                                 </a>
-                                <a href="{{ route('comics.edit', $comic) }}" style="background-color: lightgreen "
+                                <a href="{{ route('comics.edit', $comic) }}" style="background-color: lightblue "
                                     class="px-3 py-2 mt-3 rounded-circle">
                                     Change
                                 </a>
-                                <a href="{{ route('comics.show', $comic->id) }}" style="background-color: red"
-                                    class="px-3 py-2 mt-3 rounded-circle">
-                                    Delete
-                                </a>
-                            </div>
+                                <form action="{{ route('comics.destroy', $comic) }}" style="background-color: red"
+                                    class="px-2 py-2 mt-3 rounded-circle" method="POST">
+
+                                    @csrf
+                                    <form action="{{ route('comics.destroy', $comic) }}" style=""
+                                        class="px-2 py-1 mt-3 rounded-circle" method="POST">
+
+                                        @csrf
+
+                                        @method('DELETE')
+
+                                        <button class="btn background-color: red"> Delete </button>
+                                    </form>
+                                    @method('DELETE')
+
+
+                                </form>
                         </td>
                     </tr>
                 @endforeach

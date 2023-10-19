@@ -21,3 +21,11 @@ a {
 .textarea-form {
     min-height: 150px;
 }
+
+form {
+    .btn {
+        text-decoration: none;
+        color: currentColor;
+        font-weight: normal;
+    }
+}

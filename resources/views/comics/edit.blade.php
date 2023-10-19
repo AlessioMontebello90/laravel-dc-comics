@@ -3,7 +3,7 @@
 @section('main-content')
     <section class="container mt-5">
         <h1>Edit new comic</h1>
-        <a href="{{ route('comics.index') }}" class="btn btn-primary"> torna alla lista</a>
+        <a href="{{ route('comics.index') }}" class="btn btn-primary"> Back to comics list</a>
 
         <form action="{{ route('comics.update', $comic) }}" method="POST">
 
@@ -34,7 +34,7 @@
                     value="{{ $comic['series'] }}">
             </div>
 
-            <button class="btn btn-primary"> save </button>
+            <button class="btn btn-primary"> Save </button>
 
             </button>
         </form>
