@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Models\Comic;
-
+use App\Http\Controllers\Controller;
 class ComicController extends Controller
 {
     /**
@@ -26,7 +25,7 @@ class ComicController extends Controller
      */
     public function create()
     {
-         $comics = Comic::all();
+        
         return view('comics.create');
     }
 
@@ -40,11 +39,12 @@ class ComicController extends Controller
     {
         
         $data = $request->all();
-        $comic = new Comic();
-        $comic->fill($data);
-        $comic->save();
-        $comics = Comic::all();
-        return view('comics.index', compact('comics'));
+        
+        $Comic = new Comic();
+        $Comic->fill($data);
+        $Comic->save();
+    
+        return redirect()->route('comics.index'); 
     }
 
     /**
