@@ -3,6 +3,9 @@
 @section('main-content')
     <section class="container mt-5">
         <h1>COMICS LIST</h1>
+        @if (Route::currentRouteName() != 'comics.index')
+            <a href="{{ route('comics.index') }}" class="btn btn-primary"> Back to comic list</a>
+        @endif
         <table class="table">
             <thead>
                 <tr>
@@ -25,10 +28,21 @@
                         <td>{{ $comic->series }}</td>
                         <td>{{ $comic->sale_date }}</td>
                         <td>{{ $comic->type }}</td>
-                        <td style="background-color: orange">
-                            <a href="{{ route('comics.show', $comic->id) }}">
-                                info
-                            </a>
+                        <td>
+                            <div class="d-flex flex-column button-change-db">
+                                <a href="{{ route('comics.show', $comic->id) }}" style="background-color: orange"
+                                    class="px-3 py-2 mt-3 rounded-circle">
+                                    Info
+                                </a>
+                                <a href="{{ route('comics.edit', $comic) }}" style="background-color: lightgreen "
+                                    class="px-3 py-2 mt-3 rounded-circle">
+                                    Change
+                                </a>
+                                <a href="{{ route('comics.show', $comic->id) }}" style="background-color: red"
+                                    class="px-3 py-2 mt-3 rounded-circle">
+                                    Delete
+                                </a>
+                            </div>
                         </td>
                     </tr>
                 @endforeach
