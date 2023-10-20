@@ -42,16 +42,10 @@
                                     class="px-2 py-2 mt-3 rounded-circle" method="POST">
 
                                     @csrf
-                                    <form action="{{ route('comics.destroy', $comic) }}" style=""
-                                        class="px-2 py-1 mt-3 rounded-circle" method="POST">
 
-                                        @csrf
-
-                                        @method('DELETE')
-
-                                        <button class="btn background-color: red"> Delete </button>
-                                    </form>
-                                    @method('DELETE')
+                                    <button class="btn background-color: red"> Delete </button>
+                                </form>
+                                @method('DELETE')
 
 
                                 </form>
